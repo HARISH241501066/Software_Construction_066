@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResumeRank — AI-Powered Resume Ranker</title>
+  <meta name="description" content="Upload multiple resumes and rank them instantly against any job description using AI-powered keyword analysis. Find your best candidates in seconds." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- PDF.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── Animated Background ──────────────────────────────────── -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ─── Navigation ───────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Resume<span class="logo-accent">Rank</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#tool" class="nav-link">Try It</a>
+        <a href="#features" class="nav-link">Features</a>
+      </div>
+      <a href="#tool" class="nav-cta">Get Started →</a>
+    </div>
+  </nav>
+
+  <!-- ─── Hero Section ─────────────────────────────────────────── -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI-Powered Ranking Engine
+      </div>
+      <h1 class="hero-title">
+        Find the <span class="gradient-text">Perfect Candidate</span><br/>in Seconds
+      </h1>
+      <p class="hero-subtitle">
+        Upload multiple resumes, paste a job description, and instantly get AI-ranked results with detailed match scores. No sign-up. No wait. Just results.
+      </p>
+      <div class="hero-actions">
+        <a href="#tool" class="btn btn-primary" id="hero-start-btn">
+          <span>Start Ranking Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost">See How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Free to use</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">PDF</span>
+          <span class="stat-label">& TXT Support</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">0s</span>
+          <span class="stat-label">Upload required</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="floating-card card-a">
+        <div class="card-header">
+          <div class="rank-badge rank-1">🥇 #1</div>
+          <span class="card-score score-high">96%</span>
+        </div>
+        <div class="card-name">Alex Johnson</div>
+        <div class="card-tags">
+          <span class="tag">Python</span>
+          <span class="tag">React</span>
+          <span class="tag">AWS</span>
+        </div>
+        <div class="card-bar"><div class="card-bar-fill" style="width:96%"></div></div>
+      </div>
+      <div class="floating-card card-b">
+        <div class="card-header">
+          <div class="rank-badge rank-2">🥈 #2</div>
+          <span class="card-score score-med">78%</span>
+        </div>
+        <div class="card-name">Sarah Chen</div>
+        <div class="card-tags">
+          <span class="tag">Node.js</span>
+          <span class="tag">SQL</span>
+        </div>
+        <div class="card-bar"><div class="card-bar-fill" style="width:78%"></div></div>
+      </div>
+      <div class="floating-card card-c">
+        <div class="card-header">
+          <div class="rank-badge rank-3">🥉 #3</div>
+          <span class="card-score score-low">61%</span>
+        </div>
+        <div class="card-name">Marcus Lee</div>
+        <div class="card-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring</span>
+        </div>
+        <div class="card-bar"><div class="card-bar-fill" style="width:61%"></div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── How It Works ─────────────────────────────────────────── -->
+  <section class="how-it-works section" id="how-it-works">
+    <div class="container">
+      <div class="section-label">Simple Process</div>
+      <h2 class="section-title">Three Steps to Ranked Results</h2>
+      <p class="section-sub">Our intelligent engine analyzes skill keywords, experience signals, and semantic relevance — all in your browser.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-icon-wrap step-icon-1">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          </div>
+          <div class="step-num">01</div>
+          <h3>Upload Resumes</h3>
+          <p>Drop PDF or TXT resume files. We support batch uploads — upload as many candidates as you need.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon-wrap step-icon-2">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+          </div>
+          <div class="step-num">02</div>
+          <h3>Paste Job Description</h3>
+          <p>Enter the job description or key requirements. Our engine extracts weighted keywords automatically.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon-wrap step-icon-3">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="step-num">03</div>
+          <h3>Get Ranked Results</h3>
+          <p>Instantly see candidates ranked by match score. Drill into matched and missing skills for each resume.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Main Tool ─────────────────────────────────────────────── -->
+  <section class="tool-section section" id="tool">
+    <div class="container">
+      <div class="section-label">The Tool</div>
+      <h2 class="section-title">Resume Ranking Dashboard</h2>
+
+      <div class="tool-layout">
+
+        <!-- Left Panel: Inputs -->
+        <div class="input-panel glass-panel">
+          <div class="panel-header">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            <span>Configure Analysis</span>
+          </div>
+
+          <!-- Job Description -->
+          <div class="input-group">
+            <label for="job-description" class="input-label">
+              <span class="label-icon">📋</span> Job Description
+              <span class="label-required">*</span>
+            </label>
+            <textarea
+              id="job-description"
+              class="textarea-input"
+              placeholder="Paste the full job description here...&#10;&#10;Example:&#10;We are looking for a Full Stack Developer with 3+ years of experience in React, Node.js, Python, AWS, and PostgreSQL. Strong problem-solving skills and experience with Agile methodology required."
+              rows="10"
+            ></textarea>
+            <div class="char-count" id="jd-char-count">0 characters</div>
+          </div>
+
+          <!-- Keywords Preview -->
+          <div class="keywords-preview" id="keywords-preview" style="display:none;">
+            <div class="keywords-label">
+              <span class="label-icon">🔑</span> Extracted Keywords
+            </div>
+            <div class="keywords-list" id="keywords-list"></div>
+          </div>
+
+          <!-- Weighting Options -->
+          <div class="input-group">
+            <label class="input-label">
+              <span class="label-icon">⚖️</span> Ranking Weights
+            </label>
+            <div class="weight-sliders">
+              <div class="weight-item">
+                <div class="weight-header">
+                  <span>Keyword Match</span>
+                  <span class="weight-val" id="kw-val">60%</span>
+                </div>
+                <input type="range" id="kw-weight" class="slider" min="0" max="100" value="60" />
+              </div>
+              <div class="weight-item">
+                <div class="weight-header">
+                  <span>Keyword Density</span>
+                  <span class="weight-val" id="dens-val">25%</span>
+                </div>
+                <input type="range" id="dens-weight" class="slider" min="0" max="100" value="25" />
+              </div>
+              <div class="weight-item">
+                <div class="weight-header">
+                  <span>Phrase Match</span>
+                  <span class="weight-val" id="phrase-val">15%</span>
+                </div>
+                <input type="range" id="phrase-weight" class="slider" min="0" max="100" value="15" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Resume Upload -->
+          <div class="input-group">
+            <label class="input-label">
+              <span class="label-icon">📄</span> Upload Resumes
+              <span class="label-required">*</span>
+            </label>
+            <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="Upload resume files">
+              <div class="drop-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              </div>
+              <div class="drop-text">
+                <strong>Drop files here</strong> or <span class="drop-link">browse</span>
+              </div>
+              <div class="drop-hint">PDF and TXT files • Multiple files supported</div>
+              <input type="file" id="resume-input" accept=".pdf,.txt" multiple hidden />
+            </div>
+            <!-- Uploaded files list -->
+            <div class="file-list" id="file-list"></div>
+          </div>
+
+          <!-- Analyze Button -->
+          <button class="btn btn-primary btn-full" id="analyze-btn" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <span id="analyze-btn-text">Analyze &amp; Rank Resumes</span>
+          </button>
+          <p class="privacy-note">🔒 All processing happens locally in your browser. No data is sent to any server.</p>
+        </div>
+
+        <!-- Right Panel: Results -->
+        <div class="results-panel" id="results-panel">
+
+          <!-- Placeholder State -->
+          <div class="results-placeholder" id="results-placeholder">
+            <div class="placeholder-icon">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <h3>Your Rankings Will Appear Here</h3>
+            <p>Upload resumes and a job description to get started. Results are instant.</p>
+          </div>
+
+          <!-- Loading State -->
+          <div class="results-loading" id="results-loading" style="display:none;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Analyzing resumes...</div>
+            <div class="loading-sub" id="loading-progress">Processing files</div>
+          </div>
+
+          <!-- Results -->
+          <div class="results-content" id="results-content" style="display:none;">
+            <div class="results-header">
+              <div class="results-title-wrap">
+                <h3 class="results-title">Ranked Candidates</h3>
+                <span class="results-count" id="results-count">0 resumes</span>
+              </div>
+              <div class="results-actions">
+                <button class="icon-btn" id="export-btn" title="Export CSV">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  Export
+                </button>
+                <button class="icon-btn" id="reset-btn" title="Reset">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 109-9M3 3v4h4"/></svg>
+                  Reset
+                </button>
+              </div>
+            </div>
+
+            <!-- Summary bar -->
+            <div class="summary-bar" id="summary-bar"></div>
+
+            <!-- Results list -->
+            <div class="results-list" id="results-list" role="list"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features Section ──────────────────────────────────────── -->
+  <section class="features-section section" id="features">
+    <div class="container">
+      <div class="section-label">Why ResumeRank</div>
+      <h2 class="section-title">Built for Recruiters &amp; Hiring Managers</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Smart Keyword Extraction</h3>
+          <p>Automatically identifies technical skills, tools, certifications, and experience signals from job descriptions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Multi-Dimensional Scoring</h3>
+          <p>Ranks on keyword match ratio, keyword density, and phrase-level matching for a comprehensive score.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>100% Private</h3>
+          <p>Everything runs in your browser. No uploads to any server. Candidate data never leaves your device.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Analyze dozens of resumes in milliseconds. No waiting for API calls or processing queues.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Gap Analysis</h3>
+          <p>See exactly which keywords each candidate matched and which ones they missed — at a glance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📥</div>
+          <h3>CSV Export</h3>
+          <p>Export the full ranked list to CSV for sharing with your team or importing into your ATS system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Resume<span class="logo-accent">Rank</span></span>
+        </div>
+        <p class="footer-copy">Built with ❤️ — fully client-side, open &amp; free.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Detail Modal ──────────────────────────────────────────── -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal glass-panel">
+      <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+      <div class="modal-content" id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
